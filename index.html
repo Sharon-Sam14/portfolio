@@ -513,7 +513,7 @@ function App() {
             <div style={{...C.slabel,color:"#f59e0b"}}><span style={{width:26,height:1,background:"#f59e0b",display:"inline-block"}}/>Achievements</div>
             <h2 style={C.h2}>Certificates &<br/>Credentials</h2>
           </Reveal>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(420px,1fr))",gap:"1.3rem"}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(260px,1fr))",gap:"1.3rem"}}>
             {CERTS.map((cert,i)=>(
               <Reveal key={cert.title} delay={i*0.08}>
                 <div style={{background:"#0f0f1a",border:"1px solid #1a1a2e",borderRadius:18,overflow:"hidden",transition:"all 0.3s",display:"flex",flexDirection:"column"}}
