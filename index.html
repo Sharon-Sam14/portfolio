@@ -241,7 +241,7 @@ function App() {
 
   const C = {
     root:{background:"#080810",color:"#e8e8f4",fontFamily:"'DM Mono','Courier New',monospace",minHeight:"100vh",overflowX:"hidden"},
-    nav:{position:"fixed",top:0,left:0,right:0,zIndex:998,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"0 2.5rem",height:62,background:"rgba(8,8,16,0.9)",backdropFilter:"blur(20px)",borderBottom:"1px solid #1a1a2e"},
+    nav:{position:"sticky",top:0,left:0,right:0,zIndex:998,display:"flex",alignItems:"center",justifyContent:"space-between",padding:"0 2.5rem",height:62,background:"rgba(8,8,16,0.9)",backdropFilter:"blur(20px)",borderBottom:"1px solid #1a1a2e"},
     logo:{fontFamily:"'Syne',sans-serif",fontWeight:800,fontSize:"1.1rem",background:"linear-gradient(135deg,#7c5cfc,#3ecfcf)",WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent",cursor:"pointer"},
     nbtn:(a)=>({padding:"0.4rem 0.9rem",borderRadius:7,fontSize:"0.72rem",letterSpacing:"0.07em",textTransform:"uppercase",cursor:"pointer",background:a?"rgba(124,92,252,0.15)":"transparent",color:a?"#7c5cfc":"#5050a0",border:a?"1px solid rgba(124,92,252,0.3)":"1px solid transparent",fontFamily:"'DM Mono',monospace",transition:"all 0.2s"}),
     hero:{minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",padding:"7rem 3rem 4rem",position:"relative",overflow:"hidden"},
@@ -265,7 +265,7 @@ function App() {
 
       <div style={{position:"fixed",width:380,height:380,borderRadius:"50%",background:"radial-gradient(circle,rgba(124,92,252,0.07) 0%,transparent 70%)",left:mouse.x-190,top:mouse.y-190,pointerEvents:"none",zIndex:1,transition:"left 0.08s,top 0.08s"}}/>
 
-      <nav style={{...C.nav,flexWrap:"wrap"}}>
+      <nav style={{...C.nav,flexWrap:"wrap",justifyContent:"center",alignItems:"center",gap:"0.4rem"}}>
         <div style={C.logo} onClick={()=>window.scrollTo({top:0,behavior:"smooth"})}>SS/</div>
         <div style={{display:"flex",gap:"0.2rem",flexWrap:"wrap",justifyContent:"center"}}>
           {NAV.map(n=><button key={n} style={C.nbtn(active===n)} onClick={()=>go(n)}>{n}</button>)}
@@ -274,7 +274,7 @@ function App() {
       </nav>
 
       {/* HERO */}
-      <section style={{...C.hero, alignItems:"center", justifyContent:"center"}}>
+      <section style={{...C.hero, alignItems:"center", justifyContent:"center", paddingTop:"120px"}}>
         <Particles/>
         <div style={{position:"absolute",inset:0,zIndex:0,backgroundImage:"linear-gradient(#1a1a2e 1px,transparent 1px),linear-gradient(90deg,#1a1a2e 1px,transparent 1px)",backgroundSize:"58px 58px",opacity:0.28,maskImage:"radial-gradient(ellipse 80% 70% at 50% 50%,black 20%,transparent 80%)"}}/>
 
